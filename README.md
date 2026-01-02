@@ -34,3 +34,8 @@ React Product Management Dashboard is a web application built using React and Re
 ```bash
 git clone <repository-url>
 cd react-product-management
+
+npm install
+npm run dev
+http://localhost:5173
+
