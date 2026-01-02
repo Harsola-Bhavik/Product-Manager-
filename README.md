@@ -1,16 +1,16 @@
 # React Product Management Dashboard
 
-This project is a React application built as part of an interview task to demonstrate practical knowledge of React, Redux Toolkit, authentication flow, and CRUD operations. The focus of this project is clean structure, proper state management, and working with real APIs.
+React Product Management Dashboard is a web application built using React and Redux Toolkit that provides user authentication and complete product management functionality. The application focuses on clean architecture, centralized state management, and seamless API integration to deliver a reliable and scalable frontend solution.
 
 ## Features
 
 - User login and registration using DummyJSON authentication
-- JWT token handling using localStorage
-- Protected routes based on authentication state
-- Product listing fetched from API using Redux
-- Add, edit, and delete products
-- Display total product records
-- Responsive UI using Bootstrap components
+- JWT token handling with persistent login using localStorage
+- Protected routes based on authentication status
+- Product listing fetched from API using Redux state management
+- Full CRUD operations (Create, Read, Update, Delete)
+- Display of total product records
+- Responsive user interface built with Bootstrap components
 
 ## Tech Stack
 
@@ -34,8 +34,3 @@ This project is a React application built as part of an interview task to demons
 ```bash
 git clone <repository-url>
 cd react-product-management
-
-npm install
-npm run dev
-http://localhost:5173
-
