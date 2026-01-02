@@ -1,77 +1,96 @@
-# React Redux Todo Application
+React Product Management Dashboard
 
-A modern React application with Redux state management, featuring user authentication and product CRUD operations.
+This project is a React application built as part of an interview task to demonstrate practical knowledge of React, Redux Toolkit, authentication flow, and CRUD operations.
+The focus of this project is clean structure, proper state management, and working with real APIs.
 
-## Features
+Features
 
-- **User Authentication**: Login and Registration with JWT token management
-- **Product Management**: Full CRUD operations (Create, Read, Update, Delete)
-- **Redux State Management**: Centralized state with Redux Toolkit
-- **Responsive UI**: Bootstrap-based responsive design
-- **Protected Routes**: Route protection based on authentication status
-- **Local Storage**: Persistent authentication and user data
+User login and registration using DummyJSON authentication
 
-## Tech Stack
+JWT token handling using localStorage
 
-- **Frontend**: React 18 with Vite
-- **State Management**: Redux Toolkit
-- **Routing**: React Router DOM
-- **UI Framework**: React Bootstrap
-- **HTTP Client**: Axios
-- **API**: DummyJSON API for products and authentication
+Protected routes based on authentication state
 
-## Getting Started
+Product listing fetched from API using Redux
 
-### Prerequisites
+Add, edit, and delete products
 
-- Node.js (v14 or higher)
-- npm or yarn
+Display total product records
 
-### Installation
+Responsive UI using Bootstrap components
 
-1. Clone the repository:
-```bash
+Tech Stack
+
+React 18 (Vite)
+
+Redux Toolkit
+
+React Router DOM
+
+React Bootstrap
+
+Axios
+
+DummyJSON API
+
+Getting Started
+Prerequisites
+
+Node.js (v14 or above)
+
+npm
+
+Installation & Run
+
+Clone the repository:
+
 git clone <repository-url>
-cd todo-app
-```
+cd react-product-management
 
-2. Install dependencies:
-```bash
+
+Install dependencies:
+
 npm install
-```
 
-3. Start the development server:
-```bash
+
+Start the development server:
+
 npm run dev
-```
 
-4. Open your browser and navigate to `http://localhost:5173`
 
-## Usage
+Open the app in your browser:
 
-### Authentication
+http://localhost:5173
 
-1. **Login**: Use existing DummyJSON credentials:
-   - Username: `kminchelle`
-   - Password: `0lelplR`
+Authentication Details
+Login
 
-2. **Register**: Create a new account with:
-   - First Name, Last Name
-   - Username (must be unique)
-   - Email (must be unique)
-   - Password (minimum 6 characters)
+DummyJSON provides test credentials:
 
-### Product Management
+Username: kminchelle
 
-- **View Products**: Browse all products in a table format
-- **Add Product**: Create new products with title, brand, category, price, stock, and description
-- **Edit Product**: Update existing product information
-- **Delete Product**: Remove products with confirmation
-- **Total Records**: View total count of products
+Password: 0lelplR
 
-## Project Structure
+Registration
 
-```
+DummyJSON does not support real user registration.
+To handle this, a local user registration system is implemented using localStorage.
+
+Product Management
+
+Products are fetched from https://dummyjson.com/products
+
+Data flow: API → Redux → UI
+
+CRUD operations are handled using Redux state
+
+Forms are used to add and edit product details
+
+Delete action includes confirmation
+
+Total product count is displayed at the top
+
+Folder Structure
 src/
 ├── components/
 │   ├── common/
@@ -93,49 +112,46 @@ src/
 ├── utils/
 │   └── userStorage.js
 └── App.jsx
-```
 
-## API Integration
+Key Implementation Points
 
-- **Authentication**: `https://dummyjson.com/auth/login`
-- **Products**: `https://dummyjson.com/products`
-- **Local Storage**: Custom user registration system
+Redux Toolkit is used for centralized state management
 
-## Implementation Highlights
+Async API calls are handled using createAsyncThunk
 
-1. **Redux Toolkit**: Modern Redux with createSlice and createAsyncThunk
-2. **Protected Routes**: Authentication-based route protection
-3. **Error Handling**: Comprehensive error handling with user feedback
-4. **Form Validation**: Client-side validation for forms
-5. **Responsive Design**: Mobile-friendly Bootstrap components
-6. **Local User Management**: Custom system for registered users
+Authentication state is persisted using localStorage
 
-## Challenges Faced & Solutions
+Routes are protected based on login status
 
-1. **API Limitations**: DummyJSON doesn't support real user registration
-   - **Solution**: Implemented local storage system for new users
+Error and loading states are handled properly
 
-2. **Authentication Persistence**: Maintaining login state across sessions
-   - **Solution**: JWT token storage in localStorage with Redux state sync
+Challenges Faced
 
-3. **CRUD Operations**: Managing optimistic updates and error states
-   - **Solution**: Redux Toolkit's built-in loading and error states
+DummyJSON does not support real user signup
+→ Solved by implementing localStorage-based registration
 
-## Future Improvements
+Managing authentication state on page refresh
+→ Solved by syncing Redux state with stored token
 
-- Add user profile management
-- Implement product search and filtering
-- Add pagination for large product lists
-- Include product images upload
-- Add unit and integration tests
-- Implement real backend API
+Keeping CRUD logic clean and predictable
+→ Solved using Redux Toolkit patterns
 
-## Scripts
+Possible Improvements
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
+Product search and filters
 
-## License
+Pagination for product list
 
-This project is created for interview assessment purposes.
+User profile page
+
+Unit and integration testing
+
+Backend integration with real database
+
+Scripts
+
+npm run dev – Start development server
+
+npm run build – Build for production
+
+npm run preview – Preview production build
