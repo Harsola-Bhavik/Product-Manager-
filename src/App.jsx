@@ -4,8 +4,9 @@ import { Provider } from 'react-redux';
 import { useSelector } from 'react-redux';
 import store from './store';
 import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 import ProductList from './pages/products/ProductList';
-import ProductForm from './pages/products/ProductForm';
+import SimpleProductForm from './components/SimpleProductForm';
 import Navbar from './components/common/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,6 +30,10 @@ const AppContent = () => {
             element={isAuthenticated ? <Navigate to="/products" /> : <Login />} 
           />
           <Route 
+            path="/register" 
+            element={isAuthenticated ? <Navigate to="/products" /> : <Register />} 
+          />
+          <Route 
             path="/products" 
             element={
               <ProtectedRoute>
@@ -40,7 +45,7 @@ const AppContent = () => {
             path="/products/add" 
             element={
               <ProtectedRoute>
-                <ProductForm />
+                <SimpleProductForm />
               </ProtectedRoute>
             } 
           />
@@ -48,7 +53,7 @@ const AppContent = () => {
             path="/products/edit/:id" 
             element={
               <ProtectedRoute>
-                <ProductForm />
+                <SimpleProductForm />
               </ProtectedRoute>
             } 
           />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { loginUser, clearError } from '../../store/slices/authSlice';
 
 const Login = () => {
@@ -52,7 +53,7 @@ const Login = () => {
                     value={formData.username}
                     onChange={handleChange}
                     required
-                    placeholder="Enter username (try: kminchelle)"
+                    placeholder="Enter username"
                   />
                 </Form.Group>
 
@@ -64,7 +65,7 @@ const Login = () => {
                     value={formData.password}
                     onChange={handleChange}
                     required
-                    placeholder="Enter password (try: 0lelplR)"
+                    placeholder="Enter password"
                   />
                 </Form.Group>
 
@@ -79,9 +80,7 @@ const Login = () => {
               </Form>
 
               <div className="mt-3 text-center">
-                <small className="text-muted">
-                  Demo credentials: kminchelle / 0lelplR
-                </small>
+                <p>Don't have an account? <Link to="/register">Register here</Link></p>
               </div>
             </Card.Body>
           </Card>
